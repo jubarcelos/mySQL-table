@@ -13,7 +13,7 @@ CREATE TABLE SpotifyClone.artists(
 
 CREATE TABLE SpotifyClone.clients(
   client_id INT PRIMARY KEY AUTO_INCREMENT,
-  client VARCHAR(45) NOT NULL,
+  `client` VARCHAR(45) NOT NULL,
   age INT NOT NULL,
   plan_id INT NOT NULL,
   date_signature TIMESTAMP NOT NULL,
@@ -22,11 +22,10 @@ CREATE TABLE SpotifyClone.clients(
 );
 
 CREATE TABLE SpotifyClone.followed(
+  followed_id INT PRIMARY KEY AUTO_INCREMENT,
   client_id INT NOT NULL,
   artist_id INT NOT NULL,
-
-  PRIMARY KEY (client_id, artist_id),
-  CONSTRAINT FOREIGN KEY (client_id) REFERENCES users (client_id),
+  CONSTRAINT FOREIGN KEY (client_id) REFERENCES clients (client_id),
   CONSTRAINT FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 );
 
@@ -44,7 +43,6 @@ CREATE TABLE SpotifyClone.songs(
   album_id INT NOT NULL,
   song VARCHAR(90) NOT NULL,
   duration INT,
-
   CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums (album_id)
 );
 
