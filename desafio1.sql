@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS SpotifyClone;
 
-CREATE TABLE SpotifyClone.planos(
+CREATE TABLE SpotifyClone.plans(
   plan_id INT PRIMARY KEY AUTO_INCREMENT,
   plan VARCHAR(15) NOT NULL UNIQUE,
   price INT NOT NULL
