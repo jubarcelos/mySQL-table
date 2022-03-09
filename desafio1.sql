@@ -22,9 +22,9 @@ CREATE TABLE SpotifyClone.clients(
 )engine = InnoDB;
 
 CREATE TABLE SpotifyClone.followed(
-  followed_id INT PRIMARY KEY AUTO_INCREMENT,
   client_id INT NOT NULL,
   artist_id INT NOT NULL,
+  PRIMARY KEY (client, artist_id),
   CONSTRAINT FOREIGN KEY (client_id) REFERENCES clients (client_id),
   CONSTRAINT FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 )engine = InnoDB;
