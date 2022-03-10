@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS SpotifyClone;
+DROP DATABASE IF NOT EXISTS SpotifyClone;
 CREATE SCHEMA SpotifyClone;
 
 CREATE TABLE SpotifyClone.plans(
@@ -23,6 +23,7 @@ CREATE TABLE SpotifyClone.clients(
 )engine = InnoDB;
 
 CREATE TABLE SpotifyClone.followed(
+  followed_id INT AUTO_INCREMENT,
   client_id INT NOT NULL,
   artist_id INT NOT NULL,
   PRIMARY KEY (client_id, artist_id),
@@ -48,6 +49,7 @@ CREATE TABLE SpotifyClone.songs(
 )engine = InnoDB;
 
 CREATE TABLE SpotifyClone.historic(
+  historic_id INT AUTO_INCREMENT,
   client_id INT NOT NULL,
   song_id INT NOT NULL,
   `date` TIMESTAMP,
