@@ -1,4 +1,4 @@
-SELECT client AS 'usuario',
+SELECT c.client AS 'usuario',
   COUNT(h.song_id) AS 'qtde_musicas_ouvidas',
   ROUND (SUM((s.duration)/60),2) AS 'total_minutos'
 FROM SpotifyClone.historic h
